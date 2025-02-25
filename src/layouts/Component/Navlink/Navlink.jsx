@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function Navlink({ icon }) {
   return (
     <a
-      className="text-white mb-10 hover:border-b-4 hover:border-white"
+      className="text-white mb-10"
       href="#"
     >
       <i className={icon}></i>
