@@ -1,11 +1,5 @@
 function Header() {
   return (
-    // <nav className="navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 backdrop-filter backdrop-blur-md inset-0  bg-opacity-50 flex flex-row justify-between items-center h-16 z-50 ">
-    //   <div className="text-xl font-semibold">Rahman Al Aziz</div>
-    //   <div className="text-2xl">
-    //     <i className="fas fa-bars"></i>
-    //   </div>
-    // </nav>
 
     <nav className="navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 backdrop-filter backdrop-blur-md inset-0  bg-opacity-50 flex flex-row justify-between items-center h-16 z-50 ">
       <div>
