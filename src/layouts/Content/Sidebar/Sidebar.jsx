@@ -1,4 +1,5 @@
-import Navlink from "../../Component/Navlink/Navlink";
+import Navlink from "../../Components/Navlink";
+
 
 
 function Sidebar() {
@@ -28,6 +29,7 @@ function Sidebar() {
       >
         <li data-menuanchor="home" className="li active">
           <Navlink icon="fa fa-home " onClick={() => handleMoveToSection(1)} />
+
         </li>
         <li data-menuanchor="about" className={containIsActive(2)}>
           <Navlink icon="fa fa-user" onClick={() => handleMoveToSection(2)} />

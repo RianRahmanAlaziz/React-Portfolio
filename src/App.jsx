@@ -14,6 +14,7 @@ function App() {
     licenseKey: "gplv3-license",
     menu: "#sidebar",
     lockAnchors: false,
+
   };
   return (
     <>

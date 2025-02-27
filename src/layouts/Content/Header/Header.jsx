@@ -5,9 +5,7 @@ function Header() {
       <div>
         <h1 className="text-xl font-semibold ml-2 md:ml-0 transition-colors ease duration-500 ">Rahman Al Aziz</h1>
       </div>
-      <div className="text-2xl">
-        <i className="fas fa-bars"></i>
-      </div>
+
     </nav>
   );
 }
