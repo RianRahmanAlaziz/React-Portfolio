@@ -1,17 +1,18 @@
 import "./App.css";
-import Sidebar from "./layouts/Content/Sidebar/Sidebar";
-import Header from "./layouts/Content/Header/Header";
 import Home from "./layouts/page/Home";
 import ReactFullpage from '@fullpage/react-fullpage';
 import React, { useEffect } from "react";
 import Contact from "./layouts/page/Contact";
+import Header from "./layouts/Components/Header";
+import Sidebar from "./layouts/Components/Sidebar";
+import About from "./layouts/page/About";
+import Project from "./layouts/page/Project";
 
 
 function App() {
   const fullpageOptions = {
     anchors: ["home", "about", "projects", "contact"],
     scrollingSpeed: 1000,
-    licenseKey: "gplv3-license",
     menu: "#sidebar",
     lockAnchors: false,
 
@@ -26,12 +27,10 @@ function App() {
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
-                <div className="section">
-                  <Home />
-                </div>
-                <div className="section">
-                  <Contact />
-                </div>
+                <Home />
+                <About />
+                <Project />
+                <Contact />
               </ReactFullpage.Wrapper>
             );
           }}

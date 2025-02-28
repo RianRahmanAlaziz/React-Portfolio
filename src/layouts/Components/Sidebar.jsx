@@ -1,6 +1,4 @@
-import Navlink from "../../Components/Navlink";
-
-
+import Navlink from "./Navlink";
 
 function Sidebar() {
   // Fungsi untuk mengatur navigasi antar bagian menggunakan fullpage.js

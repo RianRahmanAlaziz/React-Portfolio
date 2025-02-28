@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import Hr from "../Components/Hr";
 
-function Project() {
-
+function About() {
     return (
         <div className="section">
-            <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
+            <div className="relative md:h-screen w-screen gap-4 flex justify-center items-center flex-col overflow-hidden">
                 <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
                     <motion.div
-                        className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 "
+                        className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
                         initial={{
                             x: 300,
                             opacity: 0,
@@ -43,7 +42,7 @@ function Project() {
                             delay: 0.1,
                             type: "spring",
                         }}>
-                        My Projects
+                        About Me
                     </motion.h1>
                     <Hr />
                     <motion.p
@@ -54,7 +53,8 @@ function Project() {
                             delay: 0.2,
                             type: "spring",
                         }}>
-                        These are some of the projects I have completed.
+                        A brief introduction about me and my
+                        interest.
                     </motion.p>
                     <motion.div
                         initial={{ y: 40, opacity: 0 }}
@@ -66,7 +66,7 @@ function Project() {
                         <button
                             className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out bg-gray-700 hover:bg-transparent border-transparent hover:border-gray-700 border-2 text-gray-100 hover:text-gray-700 box-border transition-colors duration-500 text-base  sm:text-lg md:text-base"
                         >
-                            <a rel="noopener noreferrer" href="/project">
+                            <a rel="noopener noreferrer" download href="/about">
                                 Learn More
                             </a>
                         </button>
@@ -77,4 +77,4 @@ function Project() {
     )
 }
 
-export default Project
+export default About

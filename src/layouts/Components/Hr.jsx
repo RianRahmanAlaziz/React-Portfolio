@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-function Hr({ variant }) {
+function Hr({ variant = "short" }) {
     return (
         <>
             {variant === "long" ? (
@@ -68,13 +68,11 @@ function Hr({ variant }) {
                 </div>
             )}
         </>
-    )
+    );
 }
+
 Hr.propTypes = {
     variant: PropTypes.oneOf(["short", "long"]),
 };
 
-Hr.defaultProps = {
-    variant: "short",
-};
-export default Hr
+export default Hr;
