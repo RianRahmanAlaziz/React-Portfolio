@@ -20,7 +20,7 @@ function Sidebar() {
     return "li"; // Default class jika tidak aktif
   };
   return (
-    <div className="hidden md:flex fixed z-40 bg-gray-700 h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
+    <div className="hidden md:flex fixed z-40 bg-[#101400] h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
       <ul
         id="sidebar"
         className="flex flex-col justify-evenly items-center h-full text-gray-50"

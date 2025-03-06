@@ -14,9 +14,9 @@ function Home() {
           className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start" >
           {/* Mobile Image */}
           <div className="block md:hidden col-span-1 mx-auto my-10">
-            <div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all ease duration-300">
+            <div className="bg-slate-500 rounded-full h-60 w-60  transition-all ease duration-300">
               <img
-                alt="Portrait of Alvalen Shafel"
+                alt="Portrait of Rian Rahman Al-Aziz"
                 className="rounded-full w-full h-full object-cover"
                 width={500}
                 height={500}
@@ -43,7 +43,7 @@ function Home() {
               delay: 0.3,
               type: "spring",
             }}
-            className="text-black text-4xl md:text-6xl lg:text-6xl 2xl:text-5xl font-bold my-2 md:my-5"
+            className="text-[#101400] text-4xl md:text-6xl lg:text-6xl 2xl:text-5xl font-bold my-2 md:my-5"
           >Full Stack Developer</motion.h1>
           <motion.p
             initial={{ x: -100, opacity: 0 }}
@@ -73,7 +73,7 @@ function Home() {
                 opacity: { delay: 0.6 },
                 type: "spring",
               }}
-              className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out bg-gray-700 hover:bg-transparent border-transparent hover:border-gray-700 border-2 text-gray-100 hover:text-gray-700 box-border transition-all duration-300 text-base  sm:text-lg md:text-base"
+              className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out bg-[#101400] hover:bg-transparent border-transparent hover:border-[#101400]  border-2 text-[#fdfcfb] hover:text-[#101400]  box-border transition-all duration-300 text-base  sm:text-lg md:text-base"
             >
               <a target="_blank" rel="noopener noreferrer" download href="/docs/cv.pdf">
                 Download CV
@@ -87,7 +87,7 @@ function Home() {
                 opacity: { delay: 0.7 },
                 type: "spring",
               }}
-              className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out transparent border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-gray-100 box-border transition-all duration-300 text-base sm:text-lg md:text-base"
+              className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out transparent border-2 border-[#101400]  text-[#101400]  hover:bg-[#101400] hover:text-[#fdfcfb] box-border transition-all duration-300 text-base sm:text-lg md:text-base"
             >
               <a href="#contact">Contact Me</a>
             </motion.button>
@@ -103,16 +103,15 @@ function Home() {
             delay: 0.7,
             type: "spring",
           }}
-          className="hidden md:flex col-span-1 mx-auto justify-center items-center" >
-          <div className="rounded-full h-auto w-auto  lg:px-12 grayscale hover:grayscale-0 transition-all ease duration-300">
+          className="hidden md:flex col-span-1 mx-auto my-10 justify-center items-center" >
+          <div className="rounded-full h-80 w-80 transition-all ease duration-300">
             <img
-              alt="Portrait of Alvalen Shafel"
+              alt="Portrait of Rian Rahman Al-Aziz"
               className="rounded-full w-full h-full object-cover "
               width={500}
               height={500}
               src="/assets/img/me.png"
             />
-
           </div>
         </motion.div>
       </div>

@@ -23,8 +23,8 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif !important;
-    color: black;
-    background-color: rgb(255, 255, 255);
+    color: #101400;
+    background-color: #fdfcfb;
 }
 
 h1,
@@ -79,7 +79,7 @@ li.active:after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #fdfcfb;
 
 
 }
@@ -98,8 +98,8 @@ a[title]:hover:after {
     padding: 0.5rem;
     white-space: nowrap;
     z-index: 1;
-    background-color: #333333;
-    color: #fff;
+    background-color: #101400;
+    color: #fdfcfb;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-size: 0.8rem;
@@ -107,6 +107,6 @@ a[title]:hover:after {
 }
 
 ::selection {
-    background: #333333;
-    color: #fff;
+    background: #101400;
+    color: #fdfcfb;
 }

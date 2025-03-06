@@ -7,7 +7,7 @@ function Hr({ variant = "short" }) {
             {variant === "long" ? (
                 <>
                     <motion.div
-                        className="bg-gray-700 w-28 h-1 rounded-full mb-3 self-start"
+                        className="bg-[#101400] w-28 h-1 rounded-full mb-2 self-start"
                         initial={{
                             opacity: 0,
                             x: -100,
@@ -21,7 +21,7 @@ function Hr({ variant = "short" }) {
                             type: "spring",
                         }}></motion.div>
                     <motion.div
-                        className="bg-gray-700 w-28 h-1 rounded-full"
+                        className="bg-[#101400] w-28 h-1 rounded-full"
                         initial={{
                             opacity: 0,
                             x: 200,
@@ -38,7 +38,7 @@ function Hr({ variant = "short" }) {
             ) : (
                 <div className="flex justify-center items-center flex-col my-5">
                     <motion.div
-                        className="bg-gray-700 w-20 h-1 rounded-full mb-2"
+                        className="bg-[#101400] w-20 h-1 rounded-full mb-2"
                         initial={{
                             opacity: 0,
                             x: -45,
@@ -52,7 +52,7 @@ function Hr({ variant = "short" }) {
                             type: "spring",
                         }}></motion.div>
                     <motion.div
-                        className="bg-gray-700 w-20 h-1 rounded-full"
+                        className="bg-[#101400] w-20 h-1 rounded-full"
                         initial={{
                             opacity: 0,
                             x: 150,
