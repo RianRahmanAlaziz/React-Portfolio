@@ -11,11 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useLoaderData } from "react-router-dom";
 
-const category = {
-    1: "Web Development",
-    2: "AI & Machine Learning",
-    9: "Other",
-}
+
 function Index() {
 
     const [activeCategory, setActiveCategory] = useState([]);

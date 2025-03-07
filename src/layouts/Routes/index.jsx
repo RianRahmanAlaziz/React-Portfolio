@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Maincontent from "../Content/Maincontent";
-import Index from "../Content/Project/Index";
+import Project from "../Content/Project/Index";
+import About from "../Content/About/Index"
 import { Categories } from "../../Api/Loading";
 import Notfound from "../Components/Notfound";
 
@@ -12,7 +13,11 @@ export const router = createBrowserRouter([
     },
     {
         path: "/projects",
-        element: <Index />,
+        element: <Project />,
         loader: Categories
+    },
+    {
+        path: "/about",
+        element: <About />,
     },
 ]);
