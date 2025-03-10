@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     {
         path: "/projects",
         element: <Project />,
-        loader: Categories
+        // loader: Categories
     },
     {
         path: "/about",

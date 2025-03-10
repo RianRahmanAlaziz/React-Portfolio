@@ -48,7 +48,7 @@ function Wrapper({ children }) {
                     type: "spring",
                 }}>
                 <section className="grid gap-8 md:gap-12">
-                    <div className="relative after:absolute after:inset-y-2 after:w-1 after:bg-gray-700 after:left-[-4px] md:after:left-1 lg:after:left-2 xl:after:left-3 grid gap-8 md:gap-12 pl-6 md:pl-8">
+                    <div className="relative after:absolute after:inset-y-2 after:w-1 after:bg-[#101400] after:left-[-4px] md:after:left-1 lg:after:left-2 xl:after:left-3 grid gap-8 md:gap-12 pl-6 md:pl-8">
                         {children}
                     </div>
                 </section>

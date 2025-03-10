@@ -32,7 +32,7 @@ export default function Skills() {
             <Wrapper>
                 <section className="grid gap-8 md:gap-12">
                     <div className="text-center space-y-2">
-                        <h2 className="text-3xl font-bold mt-3 text-black">
+                        <h2 className="text-3xl font-bold mt-3 text-[#101400]">
                             Skills and Expertise
                         </h2>
                         <p className="text-muted-foreground max-w-[800px] mx-auto">

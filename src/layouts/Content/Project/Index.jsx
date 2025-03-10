@@ -14,10 +14,16 @@ import { useLoaderData } from "react-router-dom";
 
 function Index() {
 
-    const [activeCategory, setActiveCategory] = useState([]);
+    const Categories = {
+        1: "Web Development",
+        2: "Android",
+        9: "Other",
+    }
+
+    const [activeCategory, setActiveCategory] = useState(1);
     const projects = Projects.Projects.filter((item) => item.show === true
     );
-    const Categories = useLoaderData();
+    // const Categories = useLoaderData();
 
 
     return (
@@ -67,25 +73,36 @@ function Index() {
                         type: "spring",
                     }}
                     className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
-                    {Categories.map((category) => (
+                    {Object.keys(Categories).map((key, index) => (
+                        <button
+                            key={index}
+                            className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-[#fdfcfb] focus:text-[#101400] focus:ring focus:ring-[#101400] ${activeCategory === key
+                                ? "bg-[#fdfcfb] text-[#101400] hover:bg-[#101400] hover:text-[#fdfcfb] border-2 border-[#101400] "
+                                : "bg-[#101400] text-[#fdfcfb] hover:bg-[#fdfcfb] hover:text-[#101400] hover:border-2 hover:border-[#101400] "
+                                }`}
+                            onClick={() => setActiveCategory(key)}>
+                            {Categories[key]}
+                        </button>
+                    ))}
+                    {/* {Categories.map((category) => (
                         <button
                             key={category.id}
-                            className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-gray-300 focus:text-black focus:ring focus:ring-slate-500 ${activeCategory === category.id
-                                ? "bg-gray-300 text-black hover:bg-gray-700 hover:text-white"
-                                : "bg-gray-700 text-white hover:bg-gray-300 hover:text-black"
+                            className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-[#fdfcfb] focus:text-[#101400] focus:ring focus:ring-[#101400] ${activeCategory === category.id
+                                ? "bg-[#fdfcfb] text-[#101400] hover:bg-[#101400] hover:text-[#fdfcfb] border-2 border-[#101400] "
+                                : "bg-[#101400] text-[#fdfcfb] hover:bg-[#fdfcfb] hover:text-[#101400] hover:border-2 hover:border-[#101400] "
                                 }`}
                             onClick={() => setActiveCategory(category.id)}>
                             {category.name}
                         </button>
-                    ))}
+                    ))} */}
                 </motion.div>
 
                 {/* projects */}
                 <div className="w-screen mx-auto container gap-4 px-10 grid grid-cols-1 md:grid-cols-2 mb-10 cursor-pointer">
-                    {projects.map((project, index) => (
+                    {projects.map((project) => (
                         <ProjectCard
                             project={project}
-                            key={index}
+                            key={project.id}
                             activeCategory={activeCategory}
                         />
                     ))}
