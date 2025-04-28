@@ -55,7 +55,7 @@ function Education() {
                                 <div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
                                     <div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
                                         <img
-                                            src="/assets/img/me.png"
+                                            src="/assets/img/KUNCIR.jpg"
                                             width={400}
                                             height={225}
                                             alt="University"
@@ -63,34 +63,26 @@ function Education() {
                                         />
                                     </div>
                                     {/* <div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
-                                        <Image
-                                            src={Me4}
-                                            width={400}
-                                            height={225}
-                                            alt="University"
-                                            className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
-                                        />
-                                    </div>
-                                    <div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
-                                        <Image
-                                            src={Me4}
+                                        <img
+                                            src="/assets/img/BEBAS.jpg"
                                             width={400}
                                             height={225}
                                             alt="University"
                                             className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
                                         />
                                     </div> */}
+                                    <div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">
+                                        <img
+                                            src="/assets/img/SELONGSONG.jpg"
+                                            width={400}
+                                            height={225}
+                                            alt="University"
+                                            className="rounded-lg w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 ease-in-out"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <p className="text-justify">
-                                        Aspiring to be a software engineer, I am
-                                        currently pursuing a bachelor&rsquo;s
-                                        degree in computer science at
-                                        Universitas Negeri Malang. Fascinated by
-                                        the world of technology, I am eager to
-                                        learn and explore new things in the
-                                        field of computer science.
-                                    </p>
+
                                 </div>
                                 {/* add gpa in a style */}
                                 <div className="flex flex-wrap gap-2 mt-4 text-sm">

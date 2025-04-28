@@ -80,7 +80,7 @@ function Index() {
                 {/* end experience */}
 
                 {/* Education */}
-                {/* <Education /> */}
+                <Education />
                 {/* end Education */}
 
                 {/* Quote */}

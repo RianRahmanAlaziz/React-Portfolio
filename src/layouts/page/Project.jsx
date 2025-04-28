@@ -8,7 +8,7 @@ function Project() {
             <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
                 <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
                     <motion.div
-                        className="bg-slate-300 rounded-[1vw] h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] "
+                        className="bg-slate-300 rounded-[1vw] h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] shadow-lg"
                         initial={{
                             x: 300,
                             opacity: 0,
@@ -26,7 +26,7 @@ function Project() {
                             damping: 20,
                         }}>
                         <img
-                            src="https://storage.googleapis.com/a1aa/image/5eJSgV7fwPYABHPG10wCv0teyCwpnlw6xgGZYad3F94.jpg"
+                            src="/assets/img/project1.png"
                             alt="Descriptive image text"
                             layout="fill"
                             className="object-cover rounded-[1vw] h-full w-full"
@@ -34,9 +34,9 @@ function Project() {
                         />
                     </motion.div>
                 </div>
-                <div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+                <div className="z-10 w-full absolute md:w-auto  md:left-[5%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
                     <motion.h1
-                        className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-[#101400] text-5xl md:text-6xl font-bold"
+                        className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-[#101400] text-5xl md:text-6xl font-bold"
                         initial={{ x: -100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{
@@ -54,7 +54,7 @@ function Project() {
                             delay: 0.2,
                             type: "spring",
                         }}>
-                        These are some of the projects I have completed.
+                        Ini adalah beberapa proyek yang telah saya selesaikan.
                     </motion.p>
                     <motion.div
                         initial={{ y: 40, opacity: 0 }}
@@ -63,13 +63,21 @@ function Project() {
                             delay: 0.3,
                             type: "spring",
                         }}>
-                        <button
-                            className="title mr-3 rounded-2xl px-8 py-2 shadow-md ease-in-out bg-[#101400] hover:bg-transparent border-transparent hover:border-[#101400] border-2 text-[#fdfcfb]  hover:text-[#101400] box-border transition-colors duration-500 text-base  sm:text-lg md:text-base"
-                        >
-                            <a rel="noopener noreferrer" href="/projects">
+
+                        <a rel="noopener noreferrer" href="/projects">
+                            <button
+                                className="title mr-3 rounded-2xl px-8 py-2 
+                            bg-[#101400] text-[#fcfdfe] 
+                            hover:bg-transparent hover:text-[#101400] 
+                            border-2 border-transparent hover:border-[#101400] 
+                            shadow-[0_10px_30px_rgba(0,0,0,0.3)] 
+                            hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] 
+                            transition-all duration-300 ease-in-out 
+                            text-base sm:text-lg md:text-base"
+                            >
                                 Learn More
-                            </a>
-                        </button>
+                            </button>
+                        </a>
                     </motion.div>
                 </div>
             </div>

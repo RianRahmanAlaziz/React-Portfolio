@@ -20,10 +20,10 @@ function Sidebar() {
     return "li"; // Default class jika tidak aktif
   };
   return (
-    <div className="hidden md:flex fixed z-40 bg-[#101400] h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl">
+    <div className="hidden md:flex fixed z-40 bg-[#101400]  h-[50vh] w-14 flex-col justify-between items-center p-4 left-0 top-1/4 rounded-e-3xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] ">
       <ul
         id="sidebar"
-        className="flex flex-col justify-evenly items-center h-full text-gray-50"
+        className="flex flex-col justify-evenly items-center h-full text-[#fcfdfe]"
       >
         <li data-menuanchor="home" className="li active">
           <Navlink icon="fa fa-home " onClick={() => handleMoveToSection(1)} />
