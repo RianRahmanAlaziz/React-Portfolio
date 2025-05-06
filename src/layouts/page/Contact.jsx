@@ -1,8 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
 import Hr from "../Components/Hr";
-
+import { useLoaderData } from "react-router-dom";
 
 function Contact() {
+    const { contact } = useLoaderData();
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
     return (
         <div className="section">
             <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
@@ -27,7 +29,9 @@ function Contact() {
                         }}
                         className="bg-slate-300 rounded-[1vw] h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] shadow-2xl">
                         <img
-                            src="/assets/img/project.jpg"
+                            src={contact.gambar
+                                ? `${baseUrl}/assets/images/${contact.gambar}`
+                                : "/assets/img/project.jpg"}
                             alt="Descriptive image text"
                             layout="fill"
                             className="object-cover rounded-[1vw] h-full w-full"
@@ -58,10 +62,7 @@ function Contact() {
                             delay: 0.2,
                             type: "spring",
                         }}>
-                        Contact me if you have any questions
-                        <span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-                            or just want to say hello.
-                        </span>
+                        {contact.description}
                     </motion.p>
                     <motion.p
                         className="title text-xl mt-4 tracking-wider text-[#101400] leading-[1.7rem] mb-5"
@@ -72,7 +73,7 @@ function Contact() {
                             type: "spring",
                         }}>
                         <a href="mailto:rianrahmanalaziz@gmail.com?subject=Hello&body=Hello Rian,">
-                            rianrahmanalaziz@gmail.com
+                            {contact.email}
                         </a>
                     </motion.p>
                     {/* Tombol Email */}
@@ -86,9 +87,7 @@ function Contact() {
                                 opacity: { delay: 0.2 },
                             }}
                             href="mailto:rianrahman8243@gmail.com?subject=Hello&body=Hello Rian,"
-                            className="group flex justify-center items-center bg-[#101400] w-14 h-14 rounded-full text-gray-100 hover:bg-[#fcfdfe] border-2  border-[#101400] transition-all ease-in-out duration-300 "
-
-                        >
+                            className="group flex justify-center items-center bg-[#101400] w-14 h-14 rounded-full text-gray-100 hover:bg-[#fcfdfe] border-2  border-[#101400] transition-all ease-in-out duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30" height="30"
                                 className="transition-colors duration-300 ease-in-out fill-[#fcfdfe] group-hover:fill-[#101400]">
                                 <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" /></svg>
@@ -101,7 +100,7 @@ function Contact() {
                                 y: { delay: 0.2 },
                                 opacity: { delay: 0.3 },
                             }}
-                            href="https://github.com/RianRahmanAlaziz"
+                            href={contact.github}
                             className="group flex justify-center items-center bg-[#101400] w-14 h-14 rounded-full text-gray-100 hover:bg-[#fcfdfe] border-2 border-[#101400] transition-all ease-in-out duration-300 "
                             target="_blank"
 
@@ -118,7 +117,7 @@ function Contact() {
                                 y: { delay: 0.3 },
                                 opacity: { delay: 0.4 },
                             }}
-                            href="https://www.instagram.com/rianrahmanalaziz.zip/"
+                            href={contact.instagram}
                             className="group flex justify-center items-center bg-[#101400] w-14 h-14 rounded-full text-gray-100 hover:bg-[#fcfdfe] border-2 border-[#101400] transition-all ease-in-out duration-300 "
                             target="_blank"
                         >
@@ -133,7 +132,7 @@ function Contact() {
                                 y: { delay: 0.4 },
                                 opacity: { delay: 0.5 },
                             }}
-                            href="https://www.linkedin.com/in/rian-rahman-al-aziz-5186a8302/"
+                            href={contact.linkedin}
                             className="group flex justify-center items-center bg-[#101400] w-14 h-14 rounded-full text-gray-100 hover:bg-[#fcfdfe] border-2 border-[#101400] transition-all ease-in-out duration-300 "
                             target="_blank"
                         >

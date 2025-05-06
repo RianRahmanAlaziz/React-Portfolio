@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Hr from "../Components/Hr";
+import { useLoaderData } from "react-router-dom";
 
 function Project() {
-
+    const { myproject } = useLoaderData();
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
     return (
         <div className="section">
             <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
@@ -26,7 +28,9 @@ function Project() {
                             damping: 20,
                         }}>
                         <img
-                            src="/assets/img/project1.png"
+                            src={myproject.gambar
+                                ? `${baseUrl}/assets/images/${myproject.gambar}`
+                                : "/assets/img/project1.png"}
                             alt="Descriptive image text"
                             layout="fill"
                             className="object-cover rounded-[1vw] h-full w-full"
@@ -47,14 +51,14 @@ function Project() {
                     </motion.h1>
                     <Hr />
                     <motion.p
-                        className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+                        className="title capitalize text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
                         initial={{ x: -100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{
                             delay: 0.2,
                             type: "spring",
                         }}>
-                        Ini adalah beberapa proyek yang telah saya selesaikan.
+                        {myproject.description}
                     </motion.p>
                     <motion.div
                         initial={{ y: 40, opacity: 0 }}
@@ -63,7 +67,6 @@ function Project() {
                             delay: 0.3,
                             type: "spring",
                         }}>
-
                         <a rel="noopener noreferrer" href="/projects">
                             <button
                                 className="title mr-3 rounded-2xl px-8 py-2 

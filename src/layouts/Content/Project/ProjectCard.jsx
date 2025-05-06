@@ -24,7 +24,7 @@ function ProjectCard({ project, activeCategory }) {
                         }}>
                         {/* Gambar utama */}
                         <img
-                            src={`http://127.0.0.1:8000/assets/images/project/${project.thumbnail}`}
+                            src={`http://127.0.0.1:8000/assets/images/${project.thumbnail}`}
                             alt={project.title}
                             className="absolute inset-0 w-full h-full object-cover bg-slate-950 opacity-10 transition-opacity duration-500 group-hover:opacity-100"
                         />

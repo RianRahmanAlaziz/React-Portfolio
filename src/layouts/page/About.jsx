@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import Hr from "../Components/Hr";
+import { useLoaderData } from "react-router-dom";
 
 function About() {
+    const { aboutme } = useLoaderData();
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
     return (
         <div className="section">
             <div className="relative md:h-screen w-screen gap-4 flex justify-center items-center flex-col overflow-hidden">
@@ -25,7 +28,9 @@ function About() {
                             damping: 20,
                         }}>
                         <img
-                            src="/assets/img/me.png"
+                            src={aboutme.gambar
+                                ? `${baseUrl}/assets/images/${aboutme.gambar}`
+                                : "/assets/img/me.png"}
                             alt="Descriptive image text"
                             layout="fill"
                             className="object-cover rounded-[1vw] h-full w-full"
@@ -53,8 +58,7 @@ function About() {
                             delay: 0.2,
                             type: "spring",
                         }}>
-                        A brief introduction about me and my
-                        interest.
+                        {aboutme.description}
                     </motion.p>
                     <motion.div
                         initial={{ y: 40, opacity: 0 }}
@@ -63,20 +67,20 @@ function About() {
                             delay: 0.3,
                             type: "spring",
                         }}>
-                        <button
-                            className="title mr-3 rounded-2xl px-8 py-2 
-                         bg-[#101400] text-[#fcfdfe] 
-                         hover:bg-transparent hover:text-[#101400] 
-                         border-2 border-transparent hover:border-[#101400] 
-                         shadow-[0_10px_30px_rgba(0,0,0,0.3)] 
-                         hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] 
-                         transition-all duration-300 ease-in-out 
-                         text-base sm:text-lg md:text-base"
-                        >
-                            <a rel="noopener noreferrer" href="/about">
+                        <a rel="noopener noreferrer" href="/about">
+                            <button
+                                className="title mr-3 rounded-2xl px-8 py-2 
+                            bg-[#101400] text-[#fcfdfe] 
+                            hover:bg-transparent hover:text-[#101400] 
+                            border-2 border-transparent hover:border-[#101400] 
+                            shadow-[0_10px_30px_rgba(0,0,0,0.3)] 
+                            hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] 
+                            transition-all duration-300 ease-in-out 
+                            text-base sm:text-lg md:text-base"
+                            >
                                 Learn More
-                            </a>
-                        </button>
+                            </button>
+                        </a>
                     </motion.div>
                 </div>
             </div>

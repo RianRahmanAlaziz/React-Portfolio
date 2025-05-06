@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLoaderData } from "react-router-dom";
 
 export default function Stack() {
+    const { about } = useLoaderData();
     return (
         <motion.div
             className="flex justify-center items-center flex-col mb-5 "
@@ -17,27 +19,17 @@ export default function Stack() {
 
                 type: "spring",
             }}>
-            <h2 className="text-2xl md:text-xl font-normal mb-3 md:tracking-[.3rem] lg:tracking-[.5rem] uppercase ">
+            <h2 className="text-2xl md:text-xl font-bold mb-3 md:tracking-[.3rem] lg:tracking-[.5rem] uppercase text-[#101400]">
                 Language & Framework
             </h2>
             <p className="text-gray-500 text-center tracking-widest md:px-5">
-                <span className="text-black font-bold">HTML</span> |{" "}
-                <span className="text-black font-bold">CSS</span> |{" "}
-                <span className="text-black font-bold">Javascript</span> |{" "}
-                <span className="text-black font-bold">Typescript</span> |{" "}
-                <span className="text-black font-bold">React</span> |{" "}
-                {/* <span className="text-black font-bold">NextJS</span> |{" "} */}
-                <span className="text-black font-bold">TailwindCSS</span> |{" "}
-                <span className="text-black font-bold">Bootstrap</span> |{" "}
-                {/* <span className="text-black font-medium">NodeJS</span> |{" "}
-                <span className="text-black font-medium">ExpressJS</span> |{" "} */}
-                <span className="text-black font-bold">MySQL</span> |{" "}
-                <span className="text-black font-bold">PostgreSQL</span> |{" "}
-                {/* <span className="text-black font-medium">MongoDB</span> |{" "}
-                <span className="text-black font-medium">Firebase</span> |{" "} */}
-                <span className="text-black font-medium">PHP</span> |{" "}
-                <span className="text-black font-bold">Laravel</span> |{" "}
 
+                {JSON.parse(about.framework || "[]").map((fw, index, arr) => (
+                    <span key={index} className="text-black font-bold">
+                        {fw}
+                        {index !== arr.length - 1 && " | "}
+                    </span>
+                ))}
             </p>
         </motion.div>
     );

@@ -1,10 +1,11 @@
 import React from 'react'
 import Hr from '../../../Components/Hr';
 import { motion } from "framer-motion";
+import { useLoaderData } from "react-router-dom";
 
 function Title() {
     return (
-        <div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
+        <div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-16">
             <div className="flex justify-center items-center flex-col my-5 self-start">
                 <Hr variant="long"></Hr>
                 <motion.h1
@@ -22,7 +23,7 @@ function Title() {
 
                         type: "spring",
                     }}>
-                    Profesional Experience
+                    Work Experience
                 </motion.h1>
             </div>
         </div>
@@ -48,7 +49,7 @@ function Wrapper({ children }) {
                     type: "spring",
                 }}>
                 <section className="grid gap-8 md:gap-12">
-                    <div className="relative after:absolute after:inset-y-2 after:w-1 after:bg-[#101400] after:left-[-4px] md:after:left-1 lg:after:left-2 xl:after:left-3 grid gap-8 md:gap-12 pl-6 md:pl-8">
+                    <div className="relative after:absolute after:inset-y-2 after:w-1  after:left-[-4px] md:after:left-1 lg:after:left-2 xl:after:left-3 grid gap-8 md:gap-12 pl-6 md:pl-8">
                         {children}
                     </div>
                 </section>
@@ -59,107 +60,45 @@ function Wrapper({ children }) {
 
 
 function Experience() {
+    const { Experience } = useLoaderData();
     return (
         <>
             <Title />
             <Wrapper>
-                <div className="grid gap-4 relative">
-                    <div className="aspect-square w-5 bg-black rounded-full absolute left-0 translate-x-[-29.5px] z-10" />
-                    <div className="font-medium text-lg">2023 - Present</div>
-                    <div>
-                        <h3 className="font-semibold text-xl text-black">
-                            PT Hafdzamedia Teknologi Aplikasi
-                        </h3>
-                        <h4 className=" font-light text-md mb-4">
-                            Fullstack Web Developer | Part-time
-                        </h4>
-                        <p className="text-justify">
-                            Responsible for building and maintaining scalable
-                            web applications using the latest technologies.
-                            Collaborated with cross-functional teams to deliver
-                            high-quality solutions that meet business
-                            requirements.
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-4 text-sm">
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                React
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Next.js
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Laravel
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                MySql
+                {Experience.map((exp, index) => (
+                    <motion.div
+                        key={exp.id}
+                        className="grid gap-4 relative"
+                        initial={{
+                            opacity: 0,
+                            x: -200,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        transition={{
+                            delay: 0.5 + index * 0.1, // Supaya animasinya bergantian
+                            type: "spring",
+                        }}
+                    >
+                        <div className="aspect-square w-5 bg-black rounded-full absolute left-0 translate-x-[-29.5px] z-10" />
+                        <div className="font-medium text-lg">  {new Date(exp.from).getFullYear()} - {new Date(exp.to).getFullYear()}</div>
+                        <div>
+                            <h3 className="font-semibold text-xl text-black">{exp.title}</h3>
+                            <h4 className=" font-light text-md mb-4">{exp.jabatan} | {exp.pekerjaan}</h4>
+                            <p className="text-justify">{exp.desc}</p>
+                            <div className="flex flex-wrap gap-2 mt-4 text-sm">
+                                {JSON.parse(exp.tech || "[]").map((item, i) => (
+                                    <div key={i} className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
+                                        {item}
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="grid gap-4 relative">
-                    <div className="aspect-square w-5 bg-black rounded-full absolute left-0 translate-x-[-29.5px] z-10" />
-                    <div className="font-medium text-lg">2024 - Present</div>
-                    <div>
-                        <h3 className="font-semibold text-xl text-black">
-                            Outlier
-                        </h3>
-                        <h4 className=" font-light text-md mb-4">
-                            AI Trainer | Freelance
-                        </h4>
-                        <p className="text-justify">
-                            Crafted and refined chatbot prompts using prompt
-                            engineering and RLHF techniques to improve the AI
-                            responses in English and Indonesian, leading to more
-                            accurate and contextually relevant interactions.
-                        </p>
+                    </motion.div>
+                ))}
 
-                        <div className="flex flex-wrap gap-2 mt-4 text-sm">
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Generative AI
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Prompt Engineering
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Problem Solving
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="grid gap-4 relative">
-                    <div className="aspect-square w-5 bg-black rounded-full absolute left-0 translate-x-[-29.5px] z-10" />
-                    <div className="font-medium text-lg">2023 - Present</div>
-                    <div>
-                        <h3 className="font-semibold text-xl text-black">
-                            Self-Employed
-                        </h3>
-                        <h4 className=" font-light text-md mb-4">
-                            Web Developer | Freelance
-                        </h4>
-                        <p className="text-justify">
-                            Specialized in crafting innovative solutions using
-                            Laravel and Next.js, enhancing client satisfaction
-                            and project efficiency. Contributed expertise in
-                            both frontend and backend development during
-                            collaborative team projects, leading to successful
-                            project completions
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-4 text-sm">
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                React
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Next.js
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                Laravel
-                            </div>
-                            <div className="bg-gray-300 text-black px-2 py-1 rounded-2xl">
-                                MySql
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </Wrapper>
         </>
     )

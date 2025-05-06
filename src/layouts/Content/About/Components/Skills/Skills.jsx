@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Stack from './Stack';
 import Tools from './Tools';
+import { useLoaderData } from "react-router-dom";
 
 function Wrapper({ children }) {
     return (
@@ -27,6 +28,8 @@ function Wrapper({ children }) {
 }
 
 export default function Skills() {
+    const { about } = useLoaderData();
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
     return (
         <>
             <Wrapper>
@@ -36,46 +39,36 @@ export default function Skills() {
                             Skills and Expertise
                         </h2>
                         <p className="text-muted-foreground max-w-[800px] mx-auto">
-                            Explore some skills I&apos;m proficient in to
-                            deliver high-quality solutions.
+                            {about.description}
                         </p>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-                        <div className="flex flex-col items-center gap-2">
-                            <CodepenIcon className="w-12 h-12" />
-                            <div className="font-medium">Web Development</div>
-                        </div>
-                        <div className="flex flex-col items-center gap-2">
-                            <WebhookIcon className="w-12 h-12" />
-                            <div className="font-medium">REST API</div>
-                        </div>
-                        {/* <div className="flex flex-col items-center gap-2">
-                            <ActivityIcon className="w-12 h-12" />
-                            <div className="font-medium">Machine Learning</div>
-                        </div>
-                        <div className="flex flex-col items-center gap-2">
-                            <MobileIcon className="w-12 h-12" />
-                            <div className="font-medium">
-                                Mobile Development
+                    <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+                        {about.web === "Active" && (
+                            <div className="flex flex-col items-center gap-2">
+                                <CodepenIcon className="w-12 h-12" />
+                                <div className="font-medium">Web Development</div>
                             </div>
-                        </div> */}
-                        {/* <div className="flex flex-col items-center gap-2">
-                <CloudIcon className="w-12 h-12" />
-                <div className="font-medium">Cloud Computing</div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-                <BarChartIcon className="w-12 h-12" />
-                <div className="font-medium">Data Analysis</div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-                <ComputerIcon className="w-12 h-12" />
-                <div className="font-medium">Cybersecurity</div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-                <PackageIcon className="w-12 h-12" />
-                <div className="font-medium">Product Management</div>
-            </div> */}
+                        )}
+                        {about.api === "Active" && (
+                            <div className="flex flex-col items-center gap-2">
+                                <WebhookIcon className="w-12 h-12" />
+                                <div className="font-medium">REST API</div>
+                            </div>
+                        )}
+                        {about.machine === "Active" && (
+                            <div className="flex flex-col items-center gap-2">
+                                <ActivityIcon className="w-12 h-12" />
+                                <div className="font-medium">Machine Learning</div>
+                            </div>
+                        )}
+                        {about.mobile === "Active" && (
+                            <div className="flex flex-col items-center gap-2">
+                                <MobileIcon className="w-12 h-12" />
+                                <div className="font-medium">Mobile Development</div>
+                            </div>
+                        )}
                     </div>
+
                 </section>
             </Wrapper>
             <div className=" mx-auto container gap-4 p-10 grid grid-cols-1 md:grid-cols-2 mt-10 mb-24">
