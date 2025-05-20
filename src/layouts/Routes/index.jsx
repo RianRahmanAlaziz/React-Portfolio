@@ -5,6 +5,7 @@ import About from "../Content/About/Index"
 import { ProjectsLoader, HomeLoader, AboutLoader } from "../../Api/Loading";
 import Notfound from "../Components/Notfound";
 import Archive from "../Content/Project/Archive";
+import Page from "../Content/Project/page";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,12 @@ export const router = createBrowserRouter([
             {
                 path: "archive", // = /projects/archive
                 element: <Archive />,
+                loader: ProjectsLoader
+            },
+            // Tambahkan ini:
+            {
+                path: ":slug", // = /projects/:slug
+                element: <Page />,
                 loader: ProjectsLoader
             }
         ]

@@ -8,7 +8,7 @@ function ProjectCard({ project, activeCategory }) {
     return (
         <>
             {(activeCategory === 0 || project.category_id === activeCategory) && (
-                <Link to={"projects/" + project.slug} key={project.id} className="block w-full h-full rounded-xl hover:shadow-2xl transition-shadow duration-300">
+                <Link to={project.slug} key={project.id} className="block w-full h-full rounded-xl hover:shadow-2xl transition-shadow duration-300">
                     <motion.div
                         className="relative w-full h-full flex justify-center items-center bg-gray-400 aspect-video group shadow-2xl hover:shadow-2xl transition-shadow duration-300 rounded-xl overflow-hidden"
                         initial={{
@@ -24,14 +24,14 @@ function ProjectCard({ project, activeCategory }) {
                         }}>
                         {/* Gambar utama */}
                         <img
-                            src={`http://127.0.0.1:8000/assets/images/${project.thumbnail}`}
+                            src={`http://127.0.0.1:8000/assets/images/project/${project.thumbnail}`}
                             alt={project.title}
                             className="absolute inset-0 w-full h-full object-cover bg-slate-950 opacity-10 transition-opacity duration-500 group-hover:opacity-100"
                         />
 
                         {/* Elemen tahun di sudut kiri atas */}
-                        <div className="absolute top-0 left-0 bg-[#101400]  px-4 py-2">
-                            <h4 className="text-[#fdfcfb]">{project.year}</h4>
+                        <div className="absolute top-2 left-2 bg-[#101400]  px-4 py-1 rounded-xl">
+                            <h4 className="text-[#fdfcfb]"> {new Date(project.year).getFullYear()}</h4>
                         </div>
 
                         {/* Overlay konten yang muncul saat hover */}
@@ -46,7 +46,7 @@ function ProjectCard({ project, activeCategory }) {
                                 {project.tech.map((t, index) => (
                                     <span
                                         key={index}
-                                        className="m-1 px-4 py-2 bg-[#101400] text-[#fdfcfb]">
+                                        className="m-1 px-3 py-1 bg-[#101400] text-[#fdfcfb] rounded-lg uppercase">
                                         {t}
                                     </span>
                                 ))}

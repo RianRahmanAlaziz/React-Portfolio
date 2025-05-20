@@ -39,7 +39,22 @@ function Index() {
                 <div className="mt-16 flex flex-col justify-start items-center w-full pl-10 md:pl-32">
                     <div className="flex justify-center items-center flex-col my-5 self-start">
                         <Hr variant="long"></Hr>
-
+                        <motion.h1
+                            className="text-3xl font-bold mt-3"
+                            initial={{
+                                opacity: 0,
+                                x: -200,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                            }}
+                            transition={{
+                                delay: 0.7,
+                                type: "spring",
+                            }}>
+                            Other Note Worthy Projects
+                        </motion.h1>
                     </div>
                 </div>
 
@@ -58,17 +73,6 @@ function Index() {
                         type: "spring",
                     }}
                     className="flex flex-row justify-center items-start flex-wrap gap-3 md:gap-5 my-5 ">
-                    {/* {Object.keys(Categories).map((key, index) => (
-                        <button
-                            key={index}
-                            className={`px-2 md:px-4 py-2 rounded-lg cursor-pointer transition-all ease duration-300 focus:bg-[#fdfcfb] focus:text-[#101400] focus:ring focus:ring-[#101400] ${activeCategory === key
-                                ? "bg-[#fdfcfb] text-[#101400] hover:bg-[#101400] hover:text-[#fdfcfb] "
-                                : "bg-[#101400] text-[#fdfcfb] hover:bg-[#fdfcfb] hover:text-[#101400] "
-                                }`}
-                            onClick={() => setActiveCategory(key)}>
-                            {Categories[key]}
-                        </button>
-                    ))} */}
                     {categories.map((category) => (
                         <button
                             key={category.id}

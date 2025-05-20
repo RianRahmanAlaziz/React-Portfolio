@@ -11,7 +11,6 @@ import { useLoaderData } from "react-router-dom";
 
 function Archive() {
     const { projects } = useLoaderData();
-    console.log(projects);
     return (
         <>
             <Header />
@@ -94,7 +93,7 @@ function Archive() {
                                     <th className="text-start">Year</th>
                                     <th className="text-start">Title</th>
                                     <th className="text-start">Technology</th>
-                                    <th className="text-start">Link</th>
+                                    <th className="text-center">Link</th>
                                 </motion.tr>
                             </thead>
                             <tbody>
@@ -109,7 +108,7 @@ function Archive() {
                                             transition={{ type: "spring" }}
                                             className="hover:shadow-md transition-shadow ease duration-500"
                                         >
-                                            <td>{project.year}</td>
+                                            <td> {new Date(project.year).getFullYear()}</td>
                                             <td>{project.title}</td>
                                             <td>{project.tech.map((t) => `${t}, `)}</td>
                                             <td>
