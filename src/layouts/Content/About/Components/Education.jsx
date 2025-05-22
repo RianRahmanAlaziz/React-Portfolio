@@ -35,12 +35,39 @@ function Education() {
         <Wrapper>
             <section className="grid gap-8 md:gap-12">
                 <div className="text-center space-y-2">
-                    <h1 className="text-3xl md:text-4xl font-bold tracking-tighter">
+                    <motion.h1
+                        initial={{
+                            opacity: 0,
+                            x: -200,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        transition={{
+                            delay: 0.7,
+
+                            type: "spring",
+                        }}
+                        className="text-3xl md:text-4xl font-bold tracking-tighter">
                         Education
-                    </h1>
-                    <p className="text-muted-foreground max-w-[800px] mx-auto">
+                    </motion.h1>
+                    <motion.p
+                        initial={{
+                            opacity: 0,
+                            x: 200,
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                        }}
+                        transition={{
+                            delay: 0.7,
+                            type: "spring",
+                        }}
+                        className="text-muted-foreground max-w-[800px] mx-auto">
                         My educational background.
-                    </p>
+                    </motion.p>
                 </div>
                 <div className="grid gap-8 md:gap-12">
                     {Education.map((edu, index) => {

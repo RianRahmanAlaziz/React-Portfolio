@@ -29,7 +29,14 @@ function Index() {
     return (
         <>
             <Header />
-            <main className="overflow-hidden">
+            <main
+                style={{
+                    backgroundImage: "url('/image/bg-papper.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}
+                className="overflow-hidden">
                 <FixButton href="/#projects">
                     <FontAwesomeIcon
                         icon={faChevronLeft}

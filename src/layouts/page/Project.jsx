@@ -6,7 +6,13 @@ function Project() {
     const { myproject } = useLoaderData();
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
     return (
-        <div className="section">
+        <div className="section"
+            style={{
+                backgroundImage: "url('/image/bg-papper.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            }}>
             <div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
                 <div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
                     <motion.div
@@ -21,7 +27,13 @@ function Project() {
                             opacity: 1,
                             z: 0,
                         }}
+                        whileHover={{
+                            scale: 1.05,
+                            y: -10,
+                        }}
                         transition={{
+                            scale: { duration: 0.2, ease: "easeOut" },
+                            y: { duration: 0.2, ease: "easeOut" },
                             delay: 0.5,
                             type: "spring",
                             stiffness: 100,

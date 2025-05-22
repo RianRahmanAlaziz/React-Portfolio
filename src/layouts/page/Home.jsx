@@ -5,7 +5,13 @@ function Home() {
   const { home } = useLoaderData();
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   return (
-    <div className="section">
+    <div className="section"
+      style={{
+        backgroundImage: "url('/image/bg-papper.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}>
       <div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 overflow-hidden md:px-20">
         {/* Left Column */}
         <motion.div
@@ -101,7 +107,13 @@ function Home() {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
+          whileHover={{
+            scale: 1.05,
+            y: -10,
+          }}
           transition={{
+            scale: { duration: 0.2, ease: "easeOut" },
+            y: { duration: 0.2, ease: "easeOut" },
             delay: 0.7,
             type: "spring",
           }}

@@ -54,7 +54,7 @@ function Page() {
     const { slug } = useParams();
     const { projects } = useLoaderData(); // ← Ambil dari loader
     const [data, setData] = useState(null);
-
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
     useEffect(() => {
         const project = projects.find((item) => item.slug === slug);
         if (!project) {
@@ -185,7 +185,7 @@ function Page() {
                         {data.gambar.map((image, index) => (
                             <img
                                 key={index}
-                                src={`http://127.0.0.1:8000/assets/images/project/${image}`}
+                                src={`${baseUrl}/assets/images/project/${image}`}
                                 alt={`Project Image ${index + 1}`}
                                 className="mb-5 h-auto max-h-screen max-w-7xl mx-auto"
                                 width={1920}

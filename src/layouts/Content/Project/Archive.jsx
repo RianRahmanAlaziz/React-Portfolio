@@ -14,7 +14,14 @@ function Archive() {
     return (
         <>
             <Header />
-            <main className="overflow-hidden">
+            <main className="overflow-hidden"
+                style={{
+                    backgroundImage: "url('/image/bg-papper.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}
+            >
                 <FixButton href="/projects">
                     <FontAwesomeIcon
                         icon={faChevronLeft}
@@ -99,7 +106,11 @@ function Archive() {
                             <tbody>
                                 {projects
                                     .slice() // clone dulu biar data aslinya nggak berubah
-                                    .sort((a, b) => b.year - a.year) // Urutkan dari tahun terbaru ke terlama
+                                    .sort((a, b) => {
+                                        const dateA = new Date(a.year); // parsing string ke Date
+                                        const dateB = new Date(b.year);
+                                        return dateB - dateA; // urut dari terbaru ke terlama
+                                    })
                                     .map((project, index) => (
                                         <motion.tr
                                             key={index}

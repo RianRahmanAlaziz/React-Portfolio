@@ -25,7 +25,7 @@ export default function Stack() {
             <p className="text-gray-500 text-center tracking-widest md:px-5">
 
                 {JSON.parse(about.framework || "[]").map((fw, index, arr) => (
-                    <span key={index} className="text-black font-bold">
+                    <span key={index} className="text-black font-medium">
                         {fw}
                         {index !== arr.length - 1 && " | "}
                     </span>

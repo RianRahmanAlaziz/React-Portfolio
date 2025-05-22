@@ -1,13 +1,15 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 function ProjectCard({ project, activeCategory }) {
-
+    console.log("project.category_id:", project.category_id, typeof project.category_id);
+    console.log("activeCategory:", activeCategory, typeof activeCategory);
 
     return (
         <>
-            {(activeCategory === 0 || project.category_id === activeCategory) && (
+            {(activeCategory === 0 || Number(project.category_id) === activeCategory) && (
                 <Link to={project.slug} key={project.id} className="block w-full h-full rounded-xl hover:shadow-2xl transition-shadow duration-300">
                     <motion.div
                         className="relative w-full h-full flex justify-center items-center bg-gray-400 aspect-video group shadow-2xl hover:shadow-2xl transition-shadow duration-300 rounded-xl overflow-hidden"
@@ -19,12 +21,18 @@ function ProjectCard({ project, activeCategory }) {
                             opacity: 1,
                             x: 0,
                         }}
+                        whileHover={{
+                            scale: 1.01,
+                            y: -10,
+                        }}
                         transition={{
                             type: "spring",
+                            scale: { duration: 0.2, ease: "easeOut" },
+                            y: { duration: 0.2, ease: "easeOut" },
                         }}>
                         {/* Gambar utama */}
                         <img
-                            src={`http://127.0.0.1:8000/assets/images/project/${project.thumbnail}`}
+                            src={`${baseUrl}/assets/images/project/${project.thumbnail}`}
                             alt={project.title}
                             className="absolute inset-0 w-full h-full object-cover bg-slate-950 opacity-10 transition-opacity duration-500 group-hover:opacity-100"
                         />

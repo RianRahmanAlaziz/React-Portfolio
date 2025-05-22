@@ -20,7 +20,6 @@ function Title() {
                     }}
                     transition={{
                         delay: 0.7,
-
                         type: "spring",
                     }}>
                     Work Experience

@@ -24,7 +24,7 @@ export default function Tools() {
             </h2>
             <p className="text-gray-500 text-center tracking-wider">
                 {JSON.parse(about.tools || "[]").map((tool, index, arr) => (
-                    <span key={index} className="text-black font-bold">
+                    <span key={index} className="text-black font-medium">
                         {tool}
                         {index !== arr.length - 1 && " | "}
                     </span>
