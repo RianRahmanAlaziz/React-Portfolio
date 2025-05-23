@@ -64,7 +64,12 @@ function Home() {
               type: "spring",
             }}
             className="capitalize title text-md  2xl:text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem]">
-            {home.description}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: home.description
+                  .replace(/<(?!br\s*\/?)[^>]+>/gi, '') // hapus semua tag kecuali <br>
+              }}
+            />
           </motion.p>
 
           {/* Buttons */}

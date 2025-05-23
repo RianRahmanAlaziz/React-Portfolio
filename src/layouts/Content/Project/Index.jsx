@@ -119,7 +119,7 @@ function Index() {
                         delay: 0.3,
                         type: "spring",
                     }}
-                    className="flex justify-center items-center flex-col my-5 self-start ">
+                    className="flex justify-center items-center flex-col my-5 self-start mb-10">
                     <Link to="archive">
                         <Button variation="primary">
                             View In Archive

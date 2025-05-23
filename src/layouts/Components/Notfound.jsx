@@ -6,7 +6,13 @@ function Notfound() {
     return (
         <>
             <Header />
-            <div>
+            <div
+                style={{
+                    backgroundImage: "url('/image/bg-papper.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}>
                 <div className="relative min-h-screen w-full  gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
                     <div className="min-h-screen flex justify-center items-center">
                         <div className="mx-auto grid grid-cols-1   ">
