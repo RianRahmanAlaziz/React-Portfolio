@@ -91,6 +91,7 @@ function Education() {
                                                     className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group"
                                                 >
                                                     <img
+                                                        loading="lazy"
                                                         src={`${baseUrl}/assets/images/education/${img}`}
                                                         alt="University"
                                                         width={400}

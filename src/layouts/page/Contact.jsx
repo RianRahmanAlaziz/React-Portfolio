@@ -41,6 +41,7 @@ function Contact() {
                         }}
                         className="bg-slate-300 rounded-[1vw] h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] shadow-2xl">
                         <img
+                            loading="lazy"
                             src={contact.gambar
                                 ? `${baseUrl}/assets/images/${contact.gambar}`
                                 : "/assets/img/project.jpg"}

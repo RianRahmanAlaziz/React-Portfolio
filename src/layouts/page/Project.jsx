@@ -40,6 +40,7 @@ function Project() {
                             damping: 20,
                         }}>
                         <img
+                            loading="lazy"
                             src={myproject.gambar
                                 ? `${baseUrl}/assets/images/${myproject.gambar}`
                                 : "/assets/img/project1.png"}

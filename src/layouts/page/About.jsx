@@ -40,6 +40,7 @@ function About() {
                             damping: 20,
                         }}>
                         <img
+                            loading="lazy"
                             src={aboutme.gambar
                                 ? `${baseUrl}/assets/images/${aboutme.gambar}`
                                 : "/assets/img/me.png"}

@@ -25,6 +25,7 @@ function Home() {
           <div className="block md:hidden col-span-1 mx-auto my-10">
             <div className="bg-slate-500 rounded-full h-60 w-60  transition-all ease duration-300">
               <img
+                loading="lazy"
                 alt="Portrait of Rian Rahman Al-Aziz"
                 className="rounded-full w-full h-full object-cover"
                 width={500}
@@ -125,6 +126,7 @@ function Home() {
           className="hidden md:flex col-span-1 mx-auto my-10 justify-center items-center" >
           <div className="rounded-full h-80 w-80 transition-all ease duration-300">
             <img
+              loading="lazy"
               alt="Portrait of Rian Rahman Al-Aziz"
               className="rounded-full w-full h-full object-cover "
               width={500}

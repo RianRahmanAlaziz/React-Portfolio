@@ -200,6 +200,7 @@ function Page() {
                                             onClick={() => handleOpen(`${baseUrl}/assets/images/project/${image}`)}
                                         >
                                             <img
+                                                loading="lazy"
                                                 src={`${baseUrl}/assets/images/project/${image}`}
                                                 alt={`Project Image ${index + 1}`}
                                                 className="w-full h-full object-cover"
@@ -219,6 +220,7 @@ function Page() {
                                                 onClick={() => handleOpen(`${baseUrl}/assets/images/project/${image}`)}
                                             >
                                                 <img
+                                                    loading="lazy"
                                                     src={`${baseUrl}/assets/images/project/${image}`}
                                                     alt={`Project Image ${index + 1}`}
                                                     className="w-full h-full object-cover rounded-xl"
@@ -234,6 +236,7 @@ function Page() {
                                 <dialog id="my_modal_2" className="modal modal-open">
                                     <div className="modal-box max-w-4xl">
                                         <img
+                                            loading="lazy"
                                             src={selectedImage}
                                             alt="Full View"
                                             className="rounded-xl w-full h-auto object-contain max-h-[80vh]"

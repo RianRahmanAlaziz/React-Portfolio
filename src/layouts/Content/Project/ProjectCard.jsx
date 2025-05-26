@@ -37,6 +37,7 @@ function ProjectCard({ project, activeCategory }) {
                     >
                         {/* Gambar utama */}
                         <img
+                            loading="lazy"
                             src={`${baseUrl}/assets/images/project/${project.thumbnail}`}
                             alt={project.title}
                             className="absolute inset-0 w-full h-full object-cover bg-slate-950 opacity-10 transition-opacity duration-500 group-hover:opacity-100"
