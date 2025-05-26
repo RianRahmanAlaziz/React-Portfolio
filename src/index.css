@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Aldrich', sans-serif !important;
     color: #101400;
     background-color: #fcfdfe;
 }
@@ -34,11 +35,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Jost', sans-serif !important;
+    font-family: 'Aldrich', sans-serif !important;
 }
 
 .title {
-    font-family: 'Jost', sans-serif !important;
+    font-family: 'Aldrich', sans-serif !important;
 }
 
 .section {
@@ -66,7 +67,7 @@ h6 {
 }
 
 span {
-    font-family: "Jost", sans-serif;
+    font-family: "Aldrich", sans-serif;
 }
 
 li {

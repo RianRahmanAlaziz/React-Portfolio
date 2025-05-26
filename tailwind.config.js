@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sora: ['Sora', 'sans-serif'],
+        aldrich: ['Aldrich', 'sans-serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
 

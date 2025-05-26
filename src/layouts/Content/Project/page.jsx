@@ -10,6 +10,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import FixButton from "../../Components/FixButton";
 import Notfound from "../../Components/Notfound";
 import Header from "../../Components/Header";
+import Footer from "./Footer";
 
 function ScrollDownButton() {
     const [isAtBottom, setIsAtBottom] = useState(false);
@@ -60,6 +61,10 @@ function Page() {
         { top: "top-[30vh]", left: "left-10", zIndex: "z-20" },
         { top: "top-[40vh]", left: "left-20", zIndex: "z-10" },
     ];
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleOpen = (image) => setSelectedImage(image);
+    const handleClose = () => setSelectedImage(null);
     useEffect(() => {
         const project = projects.find((item) => item.slug === slug);
         if (!project) {
@@ -104,7 +109,13 @@ function Page() {
     return (
         <>
             <Header />
-            <div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 ">
+            <div className="relative min-h-screen w-full gap-4 p-10 flex justify-center items-center flex-col mb-10 "
+                style={{
+                    backgroundImage: "url('/image/bg-papper.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                }}>
                 <FixButton href="/projects">
                     <FontAwesomeIcon
                         icon={faChevronLeft}
@@ -178,94 +189,73 @@ function Page() {
                                 </div>
                             )}
                         </div>
-                        <div className="flex justify-start items-start flex-col mb-5">
-                            {/* <div className="images relative w-full  aspect-square">
-                                <div className="absolute top-28 left-10 h-[40%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150 z-10">
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.5, x: 100 }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            x: 0,
-                                        }}
-                                        className="w-full h-full shadow-lg">
-                                        <img src={`${baseUrl}/assets/images/project/${data.thumbnail}`}
-                                            alt="Alvalens"
-                                            layout="fill"
-                                            objectFit="cover"
-                                            placeholder="blur"
-                                            className="rat" />
-                                    </motion.div>
-                                </div>
-                                <div className="absolute top-16 right-28 h-[30%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
-                                    <motion.div
-                                        initial={{
-                                            opacity: 0,
-                                            scale: 0.5,
-                                            x: -100,
-                                        }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            x: 0,
-                                        }}
-                                        transition={{ delay: 0.3 }}
-                                        className="w-full h-full shadow-lg ">
-                                        <img
-                                            src={`${baseUrl}/assets/images/project/${data.thumbnail}`}
-                                            alt="Alvalens"
-                                            layout="fill"
-                                            objectFit="cover"
-                                            placeholder="blur"
-                                            objectPosition="0% 0%" />
-                                    </motion.div>
-                                </div>
-                                <div className="absolute bottom-16 right-20 h-[35%]  aspect-video grayscale hover:grayscale-0 transition-all ease duration-300 hover:scale-150">
-                                    <motion.div
-                                        initial={{
-                                            opacity: 0,
-                                            scale: 0.5,
-                                            x: -100,
-                                        }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            x: 0,
-                                        }}
-                                        transition={{
-                                            delay: 0.5,
-                                        }}
-                                        className="w-full h-full shadow-lg">
-                                        <img
-                                            src={`${baseUrl}/assets/images/project/${data.thumbnail}`}
-                                            alt="Alvalens"
-                                            layout="fill"
-                                            objectFit="cover"
-                                            placeholder="blur" />
-
-                                    </motion.div>
-                                </div>
-                            </div> */}
-                            <div className="images relative w-full aspect-square">
-                                {data.gambar.map((image, index) => {
-                                    const style = imageStyles[index] || imageStyles[imageStyles.length - 1]; // default ke style terakhir jika lebih dari 3
-                                    return (
+                        <div className="flex flex-col mb-5 w-full">
+                            <div className="images relative w-full">
+                                {/* Grid fallback on small screens */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
+                                    {data.gambar.map((image, index) => (
                                         <div
                                             key={index}
-                                            className={`absolute ${style.top} ${style.left} ${style.zIndex} w-[90%] aspect-video shadow-xl transition-transform duration-300 hover:scale-105 grayscale hover:grayscale-0`}
+                                            className="w-full aspect-video shadow-xl rounded-xl overflow-hidden"
+                                            onClick={() => handleOpen(`${baseUrl}/assets/images/project/${image}`)}
                                         >
                                             <img
                                                 src={`${baseUrl}/assets/images/project/${image}`}
                                                 alt={`Project Image ${index + 1}`}
-                                                className="w-full h-full object-cover rounded-xl"
+                                                className="w-full h-full object-cover"
                                             />
                                         </div>
-                                    );
-                                })}
+                                    ))}
+                                </div>
+
+                                {/* Absolute overlapping only on md and up */}
+                                <div className="hidden md:block relative w-full aspect-square">
+                                    {data.gambar.map((image, index) => {
+                                        const style = imageStyles[index] || imageStyles[imageStyles.length - 1];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className={`absolute ${style.top} ${style.left} ${style.zIndex} w-[90%] aspect-video shadow-xl transition-transform duration-300 hover:scale-105`}
+                                                onClick={() => handleOpen(`${baseUrl}/assets/images/project/${image}`)}
+                                            >
+                                                <img
+                                                    src={`${baseUrl}/assets/images/project/${image}`}
+                                                    alt={`Project Image ${index + 1}`}
+                                                    className="w-full h-full object-cover rounded-xl"
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
+
+                            {/* Modal */}
+                            {selectedImage && (
+                                <dialog id="my_modal_2" className="modal modal-open">
+                                    <div className="modal-box max-w-4xl">
+                                        <img
+                                            src={selectedImage}
+                                            alt="Full View"
+                                            className="rounded-xl w-full h-auto object-contain max-h-[80vh]"
+                                        />
+                                        <form method="dialog" className="absolute top-4 right-4">
+                                            <button
+                                                onClick={handleClose}
+                                                className="btn btn-sm btn-circle btn-ghost text-white bg-black bg-opacity-50 hover:bg-opacity-70"
+                                            >
+                                                ✕
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <form method="dialog" className="modal-backdrop">
+                                        <button onClick={handleClose}>close</button>
+                                    </form>
+                                </dialog>
+                            )}
                         </div>
                     </div>
                 </div>
+
                 {/* images */}
                 <div className="mx-auto grid grid-cols-1 p-5  w-full">
                     <div className="w-full h-auto text-start flex flex-col justify-center ">
@@ -274,6 +264,7 @@ function Page() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
