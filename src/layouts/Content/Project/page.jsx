@@ -234,7 +234,7 @@ function Page() {
                             {/* Modal */}
                             {selectedImage && (
                                 <dialog id="my_modal_2" className="modal modal-open">
-                                    <div className="modal-box max-w-4xl">
+                                    <div className="modal-box ">
                                         <img
                                             loading="lazy"
                                             src={selectedImage}
@@ -260,12 +260,12 @@ function Page() {
                 </div>
 
                 {/* images */}
-                <div className="mx-auto grid grid-cols-1 p-5  w-full">
+                {/* <div className="mx-auto grid grid-cols-1 p-5  w-full">
                     <div className="w-full h-auto text-start flex flex-col justify-center ">
                         <h2 className="uppercase font-normal text-lg tracking-[8px] text-neutral-400">Description</h2>
                         <p className="text-xl text-justify tracking-wide font-normal text-gray-500 mb-5 mt-5">{data.desc}</p>
                     </div>
-                </div>
+                </div> */}
             </div>
             <Footer />
         </>

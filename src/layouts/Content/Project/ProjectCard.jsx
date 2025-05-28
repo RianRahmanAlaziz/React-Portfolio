@@ -55,11 +55,11 @@ function ProjectCard({ project, activeCategory }) {
                             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3">
                                 {project.title}
                             </h1>
-                            <p className="text-sm sm:text-base md:text-lg">
+                            {/* <p className="text-sm sm:text-base md:text-lg">
                                 {project.desc?.length > 100
                                     ? `${project.desc.slice(0, 100)}...`
                                     : project.desc}
-                            </p>
+                            </p> */}
                             <div className="flex justify-center items-center flex-wrap gap-2 mt-4">
                                 {project.tech.map((t, index) => (
                                     <span

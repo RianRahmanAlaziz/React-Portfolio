@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 function About() {
     const { aboutme } = useLoaderData();
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
     return (
         <div className="section"
             style={{

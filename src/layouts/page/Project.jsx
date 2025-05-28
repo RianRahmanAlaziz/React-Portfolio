@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import Hr from "../Components/Hr";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import Loading from "../Content/Project/loading";
 
 function Project() {
     const { myproject } = useLoaderData();
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
     return (
         <div className="section"
             style={{

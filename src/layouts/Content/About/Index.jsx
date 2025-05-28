@@ -1,4 +1,3 @@
-import React from 'react'
 import FixButton from '../../Components/FixButton';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +8,7 @@ import Education from './Components/Education';
 import Footer from '../Project/Footer';
 
 function Index() {
+
     return (
         <>
             <Header />

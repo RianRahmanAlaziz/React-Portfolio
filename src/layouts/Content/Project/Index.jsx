@@ -6,24 +6,15 @@ import ProjectCard from "./ProjectCard";
 import Header from "../../Components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Footer from "./Footer";
 import Button from "../../Components/Button";
 import { Link } from 'react-router-dom';
+import Loading from "./loading";
 
 
 function Index() {
-
-    // const Categories = {
-    //     1: "Web Development",
-    //     2: "Android",
-    //     9: "Other",
-    // }
-
     const [activeCategory, setActiveCategory] = useState(0);
-    // const projects = Projects.Projects.filter((item) => item.show === true
-    // );
-
     const { categories, projects } = useLoaderData();
 
     return (

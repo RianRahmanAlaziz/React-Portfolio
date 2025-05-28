@@ -6,11 +6,18 @@ import { ProjectsLoader, HomeLoader, AboutLoader } from "../../Api/Loading";
 import Notfound from "../Components/Notfound";
 import Archive from "../Content/Project/Archive";
 import Page from "../Content/Project/page";
+import Loading from "../Content/Project/loading";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Maincontent />,
+        errorElement: <Notfound />,
+        loader: HomeLoader
+    },
+    {
+        path: "/loading",
+        element: <Loading />,
         errorElement: <Notfound />,
         loader: HomeLoader
     },

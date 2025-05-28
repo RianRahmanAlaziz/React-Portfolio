@@ -1,9 +1,12 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLoaderData } from "react-router-dom";
 
+
 function Home() {
+
   const { home } = useLoaderData();
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
   return (
     <div className="section"
       style={{
