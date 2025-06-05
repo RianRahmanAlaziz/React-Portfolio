@@ -57,9 +57,9 @@ function Page() {
     const [data, setData] = useState(null);
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
     const imageStyles = [
-        { top: "top-[20vh]", left: "left-0", zIndex: "z-30" },
-        { top: "top-[30vh]", left: "left-10", zIndex: "z-20" },
-        { top: "top-[40vh]", left: "left-20", zIndex: "z-10" },
+        { top: "top-[20vh]", left: "left-[7vh]", zIndex: "z-30" },
+        { top: "top-[25vh]", left: "left-[10vh]", zIndex: "z-20" },
+        { top: "top-[30vh]", left: "left-[13vh]", zIndex: "z-10" },
     ];
     const [selectedImage, setSelectedImage] = useState(null);
 
