@@ -47,7 +47,7 @@ function Contact() {
                                 : "/assets/img/project.jpg"}
                             alt="Descriptive image text"
                             layout="fill"
-                            className="object-cover rounded-[1vw] h-full w-full"
+                            className="object-cover rounded-[1vw] h-full w-full grayscale-[100%] filter"
                             placeholder="blur"
                         />
                     </motion.div>

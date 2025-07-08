@@ -19,7 +19,7 @@ function Maincontent() {
     return (
         <>
             <Headers />
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div>
                 <ReactFullpage
                     {...fullpageOptions}
