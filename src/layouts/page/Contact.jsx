@@ -61,8 +61,8 @@ function Contact() {
                             delay: 0.1,
                             type: "spring",
                         }}
-                        className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-[#101400] text-5xl md:text-6xl font-bold mb-3">
-                        Get In Touch
+                        className="bg-white lg:bg-transparent bg-opacity-50 px-3 md:px-0 text-[#101400] text-4xl md:text-6xl font-bold mb-3 capitalize">
+                        let's work together
                     </motion.h1>
                     {/* Garis Dekoratif */}
                     <Hr />

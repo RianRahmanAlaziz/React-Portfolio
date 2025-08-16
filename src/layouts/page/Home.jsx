@@ -49,7 +49,7 @@ function Home() {
               type: "spring",
             }}
             className="uppercase text-xl font-normal text-gray-500 tracking-widest ">
-            RIAN RAHMAN AL AZIZ
+            RIAN RAHMAN AL AZIZ, S.Kom
           </motion.h3>
           <motion.h1
             initial={{ x: -100, opacity: 0 }}
